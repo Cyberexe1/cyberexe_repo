@@ -38,7 +38,8 @@ const Projects: React.FC = () => {
         'PDF generation for tests',
         'Student dashboard with progress tracking',
         'Mark-wise filtering system'
-      ]
+      ],
+      liveUrl: 'https://sde-prep.vercel.app/',
     },
     {
       id: 2,
@@ -54,7 +55,8 @@ const Projects: React.FC = () => {
         'User-friendly interface',
         'Real-time updates',
         'Mobile-optimized experience'
-      ]
+      ],
+      liveUrl: 'https://event-management-gules-kappa.vercel.app/',
     },
     {
       id: 3,
@@ -70,7 +72,8 @@ const Projects: React.FC = () => {
         'Rich text editor',
         'Search functionality',
         'Data encryption'
-      ]
+      ],
+      liveUrl: 'https://edu-pulse-sage.vercel.app/',
     },
     {
       id: 4,
@@ -86,7 +89,8 @@ const Projects: React.FC = () => {
         'Attention analytics',
         'Teacher dashboard',
         'Student engagement reports'
-      ]
+      ],
+      liveUrl: 'https://edu-pulse-sage.vercel.app/',
     }
   ];
 

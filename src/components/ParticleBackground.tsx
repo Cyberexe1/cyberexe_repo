@@ -21,8 +21,12 @@ const ParticleBackground: React.FC = () => {
       size: number;
       opacity: number;
       color: string;
+      canvas: HTMLCanvasElement;
+      ctx: CanvasRenderingContext2D;
 
-      constructor() {
+      constructor(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
+        this.canvas = canvas;
+        this.ctx = ctx;
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.vx = (Math.random() - 0.5) * 0.5;
@@ -36,18 +40,18 @@ const ParticleBackground: React.FC = () => {
         this.x += this.vx;
         this.y += this.vy;
 
-        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        if (this.x < 0 || this.x > this.canvas.width) this.vx *= -1;
+        if (this.y < 0 || this.y > this.canvas.height) this.vy *= -1;
       }
 
       draw() {
-        ctx.save();
-        ctx.globalAlpha = this.opacity;
-        ctx.fillStyle = this.color;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
+        this.ctx.save();
+        this.ctx.globalAlpha = this.opacity;
+        this.ctx.fillStyle = this.color;
+        this.ctx.beginPath();
+        this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        this.ctx.fill();
+        this.ctx.restore();
       }
     }
 
@@ -60,7 +64,7 @@ const ParticleBackground: React.FC = () => {
       const particleCount = Math.floor((canvas.width * canvas.height) / 15000);
       particles = [];
       for (let i = 0; i < particleCount; i++) {
-        particles.push(new Particle());
+        particles.push(new Particle(canvas, ctx));
       }
     };
 
@@ -98,6 +102,7 @@ const ParticleBackground: React.FC = () => {
 
       animationFrameId = requestAnimationFrame(animate);
     };
+
 
     resizeCanvas();
     createParticles();
