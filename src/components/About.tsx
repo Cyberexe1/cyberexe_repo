@@ -48,7 +48,7 @@ const About: React.FC = () => {
               className="text-left"
             >
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                I'm a second-year B.Tech Computer Engineering student at Thakur College of Engineering and Technology, 
+                I'm a third-year B.Tech Computer Engineering student at Thakur College of Engineering and Technology, 
                 passionate about full-stack development, AI, and solving real-world problems through technology.
               </p>
               

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Github, ExternalLink, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface Project {
   id: number;
@@ -185,6 +186,29 @@ const Projects: React.FC = () => {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Link
+            to="/all-projects"
+            className="inline-flex items-center px-6 py-3 text-lg font-medium text-white bg-primary-500 rounded-lg hover:bg-primary-600 transition-colors duration-200"
+          >
+            See More Projects
+            <svg
+              className="w-5 h-5 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </Link>
         </div>
 
         {/* Project Modal */}

@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
+import AllProjects from './components/AllProjects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ParticleBackground from './components/ParticleBackground';
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
-  const isDark = localStorage.getItem('darkMode');
-  return isDark === null ? false : isDark === 'true';
-});
+    const isDark = localStorage.getItem('darkMode');
+    return isDark === null ? false : isDark === 'true';
+  });
 
   useEffect(() => {
     localStorage.setItem('darkMode', darkMode.toString());
@@ -28,21 +30,28 @@ function App() {
   };
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${
-      darkMode ? 'dark bg-gray-900' : 'bg-gray-50'
-    }`}>
-      <ParticleBackground />
-      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      
-      <main className="relative z-10">
-        <Hero />
-        <About />
-        <Projects />
-        <Contact />
-      </main>
-      
-      <Footer />
-    </div>
+    <Router>
+      <div className={`min-h-screen transition-colors duration-300 ${
+        darkMode ? 'dark bg-gray-900' : 'bg-gray-50'
+      }`}>
+        <ParticleBackground />
+        <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+        
+        <Routes>
+          <Route path="/all-projects" element={<AllProjects />} />
+          <Route path="/" element={
+            <main className="relative z-10">
+              <Hero />
+              <About />
+              <Projects />
+              <Contact />
+            </main>
+          } />
+        </Routes>
+        
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
