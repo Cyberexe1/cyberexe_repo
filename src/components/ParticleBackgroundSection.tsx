@@ -17,8 +17,10 @@ const ParticleBackgroundSection: React.FC<ParticleBackgroundSectionProps> = ({ c
     let animationFrameId: number;
 
     const resizeCanvas = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
+      if (canvas) {
+        canvas.width = canvas.clientWidth;
+        canvas.height = canvas.clientHeight;
+      }
     };
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
@@ -33,6 +35,7 @@ const ParticleBackgroundSection: React.FC<ParticleBackgroundSectionProps> = ({ c
       radius: number;
       opacity: number;
       constructor() {
+        if (!canvas) throw new Error('Canvas is not available');
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.vx = (Math.random() - 0.5) * 3;
@@ -41,12 +44,14 @@ const ParticleBackgroundSection: React.FC<ParticleBackgroundSectionProps> = ({ c
         this.opacity = Math.random() * 0.5 + 0.2;
       }
       update() {
+        if (!canvas) return;
         this.x += this.vx;
         this.y += this.vy;
         if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
         if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
       }
       draw() {
+        if (!ctx) return;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(59, 130, 246, ${this.opacity})`;
@@ -57,6 +62,7 @@ const ParticleBackgroundSection: React.FC<ParticleBackgroundSectionProps> = ({ c
       particles.push(new Particle());
     }
     const animate = () => {
+      if (!ctx || !canvas) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       particles.forEach(particle => {
         particle.update();
@@ -80,6 +86,7 @@ const ParticleBackgroundSection: React.FC<ParticleBackgroundSectionProps> = ({ c
       });
       animationFrameId = requestAnimationFrame(animate);
     };
+
     animate();
     return () => {
       window.removeEventListener('resize', resizeCanvas);

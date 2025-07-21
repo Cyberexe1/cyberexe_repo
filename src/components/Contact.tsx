@@ -87,8 +87,10 @@ const Contact: React.FC = () => {
     let animationFrameId: number;
 
     const resizeCanvas = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
+      if (canvas) {
+        canvas.width = canvas.clientWidth;
+        canvas.height = canvas.clientHeight;
+      }
     };
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
@@ -103,6 +105,7 @@ const Contact: React.FC = () => {
       radius: number;
       opacity: number;
       constructor() {
+        if (!canvas) throw new Error('Canvas not found');
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.vx = (Math.random() - 0.5) * 2;
@@ -113,21 +116,25 @@ const Contact: React.FC = () => {
       update() {
         this.x += this.vx;
         this.y += this.vy;
-        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        if (canvas && (this.x < 0 || this.x > canvas.width)) this.vx *= -1;
+        if (canvas && (this.y < 0 || this.y > canvas.height)) this.vy *= -1;
       }
       draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(59, 130, 246, ${this.opacity})`;
-        ctx.fill();
+        if (ctx) {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(59, 130, 246, ${this.opacity})`;
+          ctx.fill();
+        }
       }
     }
     for (let i = 0; i < particleCount; i++) {
       particles.push(new Particle());
     }
     const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      if (ctx && canvas) {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
       particles.forEach(particle => {
         particle.update();
         particle.draw();

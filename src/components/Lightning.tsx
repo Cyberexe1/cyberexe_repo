@@ -166,29 +166,32 @@ const Lightning: React.FC<LightningProps> = ({
     gl.enableVertexAttribArray(aPosition);
     gl.vertexAttribPointer(aPosition, 2, gl.FLOAT, false, 0, 0);
 
-    const iResolutionLocation = gl.getUniformLocation(program, "iResolution");
-    const iTimeLocation = gl.getUniformLocation(program, "iTime");
-    const uHueLocation = gl.getUniformLocation(program, "uHue");
-    const uXOffsetLocation = gl.getUniformLocation(program, "uXOffset");
-    const uSpeedLocation = gl.getUniformLocation(program, "uSpeed");
-    const uIntensityLocation = gl.getUniformLocation(program, "uIntensity");
-    const uSizeLocation = gl.getUniformLocation(program, "uSize");
-
     const startTime = performance.now();
-    const render = () => {
-      resizeCanvas();
-      gl.viewport(0, 0, canvas.width, canvas.height);
-      gl.uniform2f(iResolutionLocation, canvas.width, canvas.height);
-      const currentTime = performance.now();
-      gl.uniform1f(iTimeLocation, (currentTime - startTime) / 1000.0);
-      gl.uniform1f(uHueLocation, hue);
-      gl.uniform1f(uXOffsetLocation, xOffset);
-      gl.uniform1f(uSpeedLocation, speed);
-      gl.uniform1f(uIntensityLocation, intensity);
-      gl.uniform1f(uSizeLocation, size);
-      gl.drawArrays(gl.TRIANGLES, 0, 6);
-      requestAnimationFrame(render);
-    };
+const render = () => {
+  resizeCanvas();
+  gl.useProgram(program); // Ensure the correct program is active
+
+  // Always get uniform locations after useProgram
+  const iResolutionLocation = gl.getUniformLocation(program, "iResolution");
+  const iTimeLocation = gl.getUniformLocation(program, "iTime");
+  const uHueLocation = gl.getUniformLocation(program, "uHue");
+  const uXOffsetLocation = gl.getUniformLocation(program, "uXOffset");
+  const uSpeedLocation = gl.getUniformLocation(program, "uSpeed");
+  const uIntensityLocation = gl.getUniformLocation(program, "uIntensity");
+  const uSizeLocation = gl.getUniformLocation(program, "uSize");
+
+  gl.viewport(0, 0, canvas.width, canvas.height);
+  gl.uniform2f(iResolutionLocation, canvas.width, canvas.height);
+  const currentTime = performance.now();
+  gl.uniform1f(iTimeLocation, (currentTime - startTime) / 1000.0);
+  gl.uniform1f(uHueLocation, hue);
+  gl.uniform1f(uXOffsetLocation, xOffset);
+  gl.uniform1f(uSpeedLocation, speed);
+  gl.uniform1f(uIntensityLocation, intensity);
+  gl.uniform1f(uSizeLocation, size);
+  gl.drawArrays(gl.TRIANGLES, 0, 6);
+  requestAnimationFrame(render);
+};
     requestAnimationFrame(render);
 
     return () => {
