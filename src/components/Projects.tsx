@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Github, ExternalLink, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ParticleBackgroundSection from './ParticleBackgroundSection';
 
 interface Project {
   id: number;
@@ -32,7 +33,7 @@ const Projects: React.FC = () => {
       longDescription: 'A comprehensive platform designed to help students prepare for software development engineer interviews through structured MCQ practice sessions.',
       techStack: ['React', 'Firebase', 'MySQL', 'Node.js'],
       githubUrl: 'https://github.com/Cyberexe1',
-      image: 'https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/Sde_Prep.png',
       features: [
         'Institute login system',
         'Chapter-wise test organization',
@@ -49,7 +50,7 @@ const Projects: React.FC = () => {
       longDescription: 'A responsive frontend application for managing college events, built under tight deadlines with focus on user experience and functionality.',
       techStack: ['React', 'Tailwind CSS'],
       githubUrl: 'https://github.com/Cyberexe1',
-      image: 'https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/Event_Management.jpeg',
       features: [
         'Event creation and management',
         'Responsive design',
@@ -66,7 +67,7 @@ const Projects: React.FC = () => {
       longDescription: 'A secure personal diary application that allows users to store and manage their private thoughts and notes with full-stack implementation.',
       techStack: ['React', 'Django', 'MySQL', 'REST API'],
       githubUrl: 'https://github.com/Cyberexe1',
-      image: 'https://images.pexels.com/photos/261763/pexels-photo-261763.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/Diary.png',
       features: [
         'Secure user authentication',
         'Private note storage',
@@ -83,7 +84,7 @@ const Projects: React.FC = () => {
       longDescription: 'An innovative AI system that monitors student attention during online lectures using computer vision and machine learning techniques.',
       techStack: ['React', 'Firebase', 'OpenCV', 'Django', 'AI/ML'],
       githubUrl: 'https://github.com/Cyberexe1',
-      image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/EduPulse.png',
       features: [
         'Real-time facial recognition',
         'Eye tracking technology',
@@ -96,8 +97,8 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-      <div className="container mx-auto px-6">
+    <ParticleBackgroundSection className="py-20" style={{ minHeight: 'auto' }}>
+      <div id="projects" className="container mx-auto px-6">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -304,7 +305,7 @@ const Projects: React.FC = () => {
           </motion.div>
         )}
       </div>
-    </section>
+    </ParticleBackgroundSection>
   );
 };
 

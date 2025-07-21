@@ -4,11 +4,12 @@ import { motion } from 'framer-motion';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
+import DeveloperSkills from './components/DeveloperSkills';
 import Projects from './components/Projects';
 import AllProjects from './components/AllProjects';
+import Certificates from './components/Certificates';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import ParticleBackground from './components/ParticleBackground';
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -34,7 +35,6 @@ function App() {
       <div className={`min-h-screen transition-colors duration-300 ${
         darkMode ? 'dark bg-gray-900' : 'bg-gray-50'
       }`}>
-        <ParticleBackground />
         <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         
         <Routes>
@@ -44,6 +44,8 @@ function App() {
               <Hero />
               <About />
               <Projects />
+              <DeveloperSkills />
+              <Certificates />
               <Contact />
             </main>
           } />

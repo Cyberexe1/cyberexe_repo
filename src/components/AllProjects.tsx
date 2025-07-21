@@ -24,7 +24,7 @@ const allProjects: Project[] = [
     techStack: ['React', 'Firebase', 'MySQL', 'Node.js'],
     githubUrl: 'https://github.com/Cyberexe1',
     liveUrl: 'https://sde-prep.vercel.app/',
-    image: 'https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/Sde_Prep.png',
     features: [
       'Institute login system',
       'Chapter-wise test organization',
@@ -41,7 +41,7 @@ const allProjects: Project[] = [
     techStack: ['React', 'Tailwind CSS'],
     githubUrl: 'https://github.com/Cyberexe1',
     liveUrl: 'https://event-management-gules-kappa.vercel.app/',
-    image: 'https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/Event_Management.jpeg',
     features: [
       'Event creation and management',
       'Responsive design',
@@ -58,7 +58,7 @@ const allProjects: Project[] = [
     techStack: ['React', 'Firebase', 'OpenCV', 'Django', 'AI/ML'],
     githubUrl: 'https://github.com/Cyberexe1',
     liveUrl: 'https://edu-pulse-sage.vercel.app/',
-    image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/EduPulse.png',
     features: [
       'Real-time facial recognition',
       'Eye tracking technology',
@@ -74,7 +74,7 @@ const allProjects: Project[] = [
     longDescription: 'A full-featured grocery shopping website with inventory management, shopping cart, and order tracking capabilities.',
     techStack: ['Html', 'Css', 'JavaScript'],
     githubUrl: 'https://github.com/Cyberexe1',
-    image: 'https://images.pexels.com/photos/264547/pexels-photo-264547.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/Grocery_Website.png',
     features: [
       'Real-time inventory tracking',
       'Shopping cart functionality',
@@ -85,18 +85,18 @@ const allProjects: Project[] = [
   },
   {
     id: 5,
-    title: 'AC Repair Website',
-    description: 'Service booking platform for AC repair and maintenance.',
-    longDescription: 'A comprehensive platform for booking AC repair and maintenance services with real-time technician tracking.',
-    techStack: ['Html', 'Css', 'JavaScript'],
+    title: 'Personal Diary App',
+    description: 'React + Django REST API-based diary storing private notes securely in MySQL.',
+    longDescription: 'A secure personal diary application that allows users to store and manage their private thoughts and notes with full-stack implementation.',
+    techStack: ['React', 'Django', 'MySQL', 'REST API'],
     githubUrl: 'https://github.com/Cyberexe1',
-    image: 'https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/Diary.png',
     features: [
-      'Service booking system',
-      'Technician tracking',
-      'Review system',
-      'Service history',
-      'Payment integration'
+      'Secure user authentication',
+      'Private note storage',
+      'Rich text editor',
+      'Search functionality',
+      'Data encryption'
     ]
   },
   {
@@ -106,28 +106,12 @@ const allProjects: Project[] = [
     longDescription: 'An online store for plywood and laminate products with detailed product categorization and comparison features.',
     techStack: ['React','Typescript', 'Node.js'],
     githubUrl: 'https://github.com/Cyberexe1',
-    image: 'https://images.pexels.com/photos/6431298/pexels-photo-6431298.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/Plywood_Shop.png',
     features: [
       'Product catalog',
       'Price comparison',
       'Product filtering',
       'Customer reviews'
-    ]
-  },
-  {
-    id: 7,
-    title: 'Smart City Dashboard',
-    description: 'Real-time monitoring dashboard for smart city infrastructure.',
-    longDescription: 'A comprehensive dashboard for monitoring and managing smart city infrastructure with real-time data visualization.',
-    techStack: ['Django','Html','css','javascript','Google Maps API','Twilio'],
-    githubUrl: 'https://github.com/Cyberexe1',
-    image: 'https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg?auto=compress&cs=tinysrgb&w=800',
-    features: [
-      'Real-time monitoring',
-      'Data visualization',
-      'Infrastructure management',
-      'Alert system',
-      'Analytics dashboard'
     ]
   }
 ];

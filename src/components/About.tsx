@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Code, Database, Globe, Smartphone, Brain, Zap } from 'lucide-react';
+import ParticleBackgroundSection from './ParticleBackgroundSection';
 
 const About: React.FC = () => {
   const [ref, inView] = useInView({
@@ -27,8 +28,8 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
-      <div className="container mx-auto px-6">
+    <ParticleBackgroundSection className="py-20" style={{ minHeight: 'auto' }}>
+      <div id="about" className="container mx-auto px-6">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -39,24 +40,21 @@ const About: React.FC = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-8 gradient-text">
             About Me
           </h2>
-          
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col items-center justify-center">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
+              initial={{ opacity: 0, y: 40 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-left"
+              className="max-w-2xl text-center"
             >
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                 I'm a third-year B.Tech Computer Engineering student at Thakur College of Engineering and Technology, 
                 passionate about full-stack development, AI, and solving real-world problems through technology.
               </p>
-              
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                 My journey in tech is driven by curiosity and the desire to create impactful solutions that make a difference 
                 in education and productivity. I love exploring new technologies and building projects that solve real problems.
               </p>
-
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -70,40 +68,10 @@ const About: React.FC = () => {
                 </a>
               </motion.div>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <h3 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">
-                Tech Stack
-              </h3>
-              
-              <div className="grid grid-cols-2 gap-4">
-                {techStack.map((tech, index) => (
-                  <motion.div
-                    key={tech.name}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                    whileHover={{ scale: 1.05, y: -5 }}
-                    className="flex items-center space-x-3 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:shadow-lg transition-all duration-300"
-                  >
-                    <div className={tech.color}>
-                      {tech.icon}
-                    </div>
-                    <span className="font-medium text-gray-700 dark:text-gray-300">
-                      {tech.name}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
           </div>
         </motion.div>
       </div>
-    </section>
+    </ParticleBackgroundSection>
   );
 };
 

@@ -40,6 +40,34 @@
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
   }
+
+  .animate-gradient-shift {
+    animation: gradient-shift 8s ease-in-out infinite;
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Custom scrollbar */
@@ -57,4 +85,40 @@
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-primary-500;
+}
+
+/* Custom cursor */
+.custom-cursor {
+  @apply fixed w-8 h-8 pointer-events-none z-50 rounded-full border-2 border-primary-500 transition-transform duration-200;
+  mix-blend-mode: difference;
+}
+
+/* Hover animations */
+.hover-scale {
+  @apply transition-transform duration-300 hover:scale-105;
+}
+
+.hover-lift {
+  @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-lg;
+}
+
+/* Loading animations */
+.loading-spin {
+  @apply animate-spin rounded-full border-2 border-gray-200 border-t-primary-500;
+}
+
+.loading-pulse {
+  @apply animate-pulse bg-gray-200 dark:bg-gray-700;
+}
+
+/* Text animations */
+.text-gradient-animate {
+  background-size: 200% auto;
+  animation: text-gradient 4s linear infinite;
+}
+
+@keyframes text-gradient {
+  to {
+    background-position: 200% center;
+  }
 }
