@@ -14,7 +14,7 @@ import Footer from './components/Footer';
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
     const isDark = localStorage.getItem('darkMode');
-    return isDark === null ? false : isDark === 'true';
+    return isDark === null ? true : isDark === 'true';
   });
 
   useEffect(() => {
