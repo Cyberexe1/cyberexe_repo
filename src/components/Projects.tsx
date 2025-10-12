@@ -98,7 +98,7 @@ const Projects: React.FC = () => {
 
   return (
     <ParticleBackgroundSection className="py-20" style={{ minHeight: 'auto' }}>
-      <div id="projects" className="container mx-auto px-6">
+      <div id="projects" className="container mx-auto px-6" style={{ marginTop: '100px' }}>
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -126,7 +126,7 @@ const Projects: React.FC = () => {
               className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden cursor-pointer"
               onClick={() => setSelectedProject(project)}
             >
-              <div className="relative overflow-hidden">
+              <div className="relative overflow-hidden ">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -218,14 +218,14 @@ const Projects: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-1200 flex items-center justify-center p-4"
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
-              className="bg-white dark:bg-gray-800 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+              className="bg-white dark:bg-gray-800 rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="relative">
