@@ -20,8 +20,8 @@ const Internship: React.FC = () => {
           className="max-w-4xl ml-0 mr-auto -translate-x-24"
         >
           {/* Section Header */}
-          <div className="text-center mb-14">
-            <h2 className="text-5xl md:text-6xl font-bold mb-4 gradient-text">
+          <div className=" mb-14 ml-[400px]">
+            <h2 className="text-5xl   md:text-6xl font-bold mb-4 gradient-text">
               Experience
             </h2>
      
@@ -73,12 +73,16 @@ const Internship: React.FC = () => {
               </div>
 
               {/* Description */}
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-5 max-w-2xl font-mono text-base">
-                Developed and integrated frontend &amp; backend features for the live project{' '}
-                <span className="text-primary-400 font-semibold">Gear Gains</span>. Built dynamic,
-                responsive modules in a fast-paced, deadline-driven environment — strengthening
-                problem-solving, debugging, and optimization skills while delivering production-ready
-                code.
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-5 font-mono text-base" style={{ maxWidth: 'calc(42rem + 150px)' }}>
+                During my internship at <span className="text-primary-400 font-semibold">Navrasa IT Solutions</span> from
+                November 2025 to January 2026, I contributed to the live project{' '}
+                <span className="text-primary-400 font-semibold">Gear Gains</span> (geargains.in) as a
+                Full Stack Developer Intern. I was responsible for developing and integrating both frontend
+                and backend features, working with technologies like HTML, CSS, JavaScript, and APIs to build
+                dynamic and responsive functionalities. Operating in a fast-paced, deadline-driven environment
+                helped me strengthen my problem-solving, debugging, and optimization skills while ensuring
+                timely delivery of production-ready modules. This experience gave me practical exposure to
+                real-world development workflows, team collaboration, and handling live application challenges effectively.
               </p>
 
               {/* Tech Tags */}
