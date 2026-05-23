@@ -17,7 +17,7 @@ const Internship: React.FC = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl ml-0 mr-auto -translate-x-24"
+          className="max-w-6xl ml-0 mr-auto -translate-x-24"
         >
           {/* Section Header */}
           <div className=" mb-14 ml-[400px]">
@@ -73,7 +73,7 @@ const Internship: React.FC = () => {
               </div>
 
               {/* Description */}
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-5 font-mono text-base" style={{ maxWidth: 'calc(42rem + 150px)' }}>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-5 font-mono text-base" style={{ maxWidth: 'calc(42rem + 350px)' }}>
                 During my internship at <span className="text-primary-400 font-semibold">Navrasa IT Solutions</span> from
                 November 2025 to January 2026, I contributed to the live project{' '}
                 <span className="text-primary-400 font-semibold">Gear Gains</span> (geargains.in) as a
