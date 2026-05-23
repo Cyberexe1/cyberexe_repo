@@ -3,18 +3,120 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vikas Tiwari - Developer Portfolio</title>
+
+  <!-- ═══════════════════════════════════════════
+       PRIMARY SEO META TAGS
+  ═══════════════════════════════════════════ -->
+  <title>Vikas Tiwari | Full Stack Developer & Software Engineer — Mumbai</title>
   <meta name="description"
-    content="Vikas Tiwari - Computer Engineering Student & Future Software Developer. Building impactful tech for education & productivity." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    content="Vikas Tiwari is a Full Stack Developer and Computer Engineering student at TCET Mumbai. Specializing in React, Django, Node.js, AI/ML projects. Available for internships and freelance work." />
+  <meta name="keywords"
+    content="Vikas Tiwari, Vikas Tiwari Full Stack Developer, React Developer, Computer Engineering TCET, Mumbai Developer, Node.js, Python, AI ML Developer, Vikas Tiwari Portfolio, Vikas TCET, Vikas Tiwari Developer" />
+  <meta name="author" content="Vikas Tiwari" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.vikas-tiwari.in/" />
+
+  <!-- ═══════════════════════════════════════════
+       OPEN GRAPH (Facebook, LinkedIn, WhatsApp)
+  ═══════════════════════════════════════════ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.vikas-tiwari.in/" />
+  <meta property="og:title" content="Vikas Tiwari | Full Stack Developer & Software Engineer" />
+  <meta property="og:description"
+    content="Full Stack Developer specializing in React, Django, Node.js and AI/ML. B.Tech Computer Engineering student at TCET Mumbai. Building impactful tech for education and productivity." />
+  <meta property="og:image" content="https://www.vikas-tiwari.in/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Vikas Tiwari Portfolio" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- ═══════════════════════════════════════════
+       TWITTER / X CARD
+  ═══════════════════════════════════════════ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vikas Tiwari | Full Stack Developer & Software Engineer" />
+  <meta name="twitter:description"
+    content="Full Stack Developer specializing in React, Django, Node.js and AI/ML. B.Tech Computer Engineering student at TCET Mumbai." />
+  <meta name="twitter:image" content="https://www.vikas-tiwari.in/og-image.png" />
+
+  <!-- ═══════════════════════════════════════════
+       FAVICON
+  ═══════════════════════════════════════════ -->
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+  <!-- ═══════════════════════════════════════════
+       FONTS — preconnect first, then load
+  ═══════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" />
+
+  <!-- ═══════════════════════════════════════════
+       STRUCTURED DATA — Person Schema (JSON-LD)
+  ═══════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vikas Tiwari",
+    "url": "https://www.vikas-tiwari.in",
+    "image": "https://www.vikas-tiwari.in/Profile.png",
+    "jobTitle": "Full Stack Developer",
+    "description": "Full Stack Developer and Computer Engineering student at Thakur College of Engineering and Technology, Mumbai. Specializing in React, Django, Node.js, Python, and AI/ML applications.",
+    "email": "vikastiwari1045@gmail.com",
+    "sameAs": [
+      "https://github.com/Cyberexe1",
+      "https://www.linkedin.com/in/vikas-tiwari-37b069326"
+    ],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Thakur College of Engineering and Technology",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mumbai",
+        "addressCountry": "IN"
+      }
+    },
+    "knowsAbout": [
+      "React.js", "Node.js", "Django", "Python", "JavaScript", "TypeScript",
+      "MySQL", "Firebase", "MongoDB", "Full Stack Development", "AI/ML",
+      "REST APIs", "TailwindCSS", "OpenCV"
+    ],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Full Stack Developer Intern",
+      "occupationLocation": {
+        "@type": "City",
+        "name": "Mumbai"
+      }
+    }
+  }
+  </script>
+
+  <!-- ═══════════════════════════════════════════
+       STRUCTURED DATA — WebSite Schema
+  ═══════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Vikas Tiwari Portfolio",
+    "url": "https://www.vikas-tiwari.in",
+    "description": "Portfolio website of Vikas Tiwari, Full Stack Developer and Software Engineer based in Mumbai, India.",
+    "author": {
+      "@type": "Person",
+      "name": "Vikas Tiwari"
+    }
+  }
+  </script>
+
+  <!-- ═══════════════════════════════════════════
+       DARK MODE — prevent FOUC
+  ═══════════════════════════════════════════ -->
   <script>
-    // Prevent flash of unstyled content by setting dark mode immediately
     (function () {
       const isDark = localStorage.getItem('darkMode');
       const shouldBeDark = isDark === null ? true : isDark === 'true';

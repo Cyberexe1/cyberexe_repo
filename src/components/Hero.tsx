@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" aria-label="Introduction" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Lightning background */}
       <Lightning hue={220} xOffset={0} speed={1} intensity={1} size={1} />
       
@@ -41,41 +41,46 @@ const Hero: React.FC = () => {
               <div className="w-full h-full rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-4xl font-bold text-gray-600 dark:text-gray-300 overflow-hidden">
                 <img
                   src={ProfileImg}
-                  alt="Profile"
+                  alt="Vikas Tiwari — Full Stack Developer based in Mumbai"
+                  width={128}
+                  height={128}
                   className="w-full h-full object-cover rounded-full hover:scale-110 transition-transform duration-500"
                 />
               </div>
             </div>
           </motion.div>
 
-          {/* Name */}
-          <SplitText
-            text="Vikas Tiwari"
-            className="text-5xl md:text-7xl font-bold mb-6 gradient-text text-white"
-            delay={100}
-            duration={0.6}
-            ease="easeOut"
-            splitType="chars"
-            from={{ opacity: 0, y: 40 }}
-            to={{ opacity: 1, y: 0 }}
-          />
+          {/* H1 — primary keyword target */}
+          <h1>
+            <SplitText
+              text="Vikas Tiwari"
+              className="text-5xl md:text-7xl font-bold mb-6 gradient-text text-white"
+              delay={100}
+              duration={0.6}
+              ease="easeOut"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+            />
+          </h1>
 
-          {/* Animated Role */}
+          {/* Animated Role — secondary keyword signal */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-4 h-[60px]"
+            aria-label="Full Stack Developer & Software Engineer"
           >
             <TypeAnimation
               sequence={[
-                'Software Engineer',
-                2000,
                 'Full Stack Developer',
                 2000,
-                'Problem Solver',
+                'Software Engineer',
                 2000,
-                'Tech Enthusiast',
+                'React & Django Developer',
+                2000,
+                'AI/ML Enthusiast',
                 2000,
               ]}
               wrapper="span"
@@ -91,7 +96,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-lg text-gray-500 dark:text-gray-400 mb-8 max-w-2xl mx-auto"
           >
-            Building impactful tech for education & productivity
+            B.Tech Computer Engineering student at TCET Mumbai — building production-ready web apps and AI tools that solve real problems in education and productivity.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -105,6 +110,7 @@ const Hero: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={scrollToProjects}
+              aria-label="View my projects"
               className="px-8 py-4 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
             >
               View Projects
@@ -115,28 +121,32 @@ const Hero: React.FC = () => {
               download="Vikas_Tiwari_Resume.pdf"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              aria-label="Download Vikas Tiwari's resume PDF"
               className="px-8 py-4 bg-white dark:bg-gray-800 text-primary-500 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
             >
               <Download size={20} />
-              Download CV
+              Download Resume
             </motion.a>
             
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={scrollToContact}
+              aria-label="Go to contact section"
               className="px-8 py-4 border-2 border-primary-500 text-primary-500 dark:text-primary-400 rounded-full font-semibold hover:bg-primary-500 hover:text-white transition-all duration-300"
             >
-              Contact Me
+              Hire Me
             </motion.button>
           </motion.div>
 
-          {/* Social Links with hover effects */}
+          {/* Social Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
             className="flex justify-center space-x-6 mb-12"
+            role="list"
+            aria-label="Social media links"
           >
             <motion.a
               whileHover={{ scale: 1.2, y: -5 }}
@@ -144,6 +154,8 @@ const Hero: React.FC = () => {
               href="https://github.com/Cyberexe1"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Vikas Tiwari on GitHub"
+              role="listitem"
               className="p-3 bg-gray-200 dark:bg-gray-700 rounded-full text-gray-700 dark:text-gray-300 hover:bg-primary-500 hover:text-white transition-all duration-300 hover:shadow-lg"
             >
               <Github size={24} />
@@ -155,6 +167,8 @@ const Hero: React.FC = () => {
               href="https://www.linkedin.com/in/vikas-tiwari-37b069326"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Vikas Tiwari on LinkedIn"
+              role="listitem"
               className="p-3 bg-gray-200 dark:bg-gray-700 rounded-full text-gray-700 dark:text-gray-300 hover:bg-primary-500 hover:text-white transition-all duration-300 hover:shadow-lg"
             >
               <Linkedin size={24} />
@@ -163,7 +177,9 @@ const Hero: React.FC = () => {
             <motion.a
               whileHover={{ scale: 1.2, y: -5 }}
               whileTap={{ scale: 0.9 }}
-              href="mailto:Vikastiwari1045@gmail.com"
+              href="mailto:vikastiwari1045@gmail.com"
+              aria-label="Email Vikas Tiwari"
+              role="listitem"
               className="p-3 bg-gray-200 dark:bg-gray-700 rounded-full text-gray-700 dark:text-gray-300 hover:bg-primary-500 hover:text-white transition-all duration-300 hover:shadow-lg"
             >
               <Mail size={24} />

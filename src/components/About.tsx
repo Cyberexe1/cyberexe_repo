@@ -48,12 +48,13 @@ const About: React.FC = () => {
               className="max-w-2xl text-center"
             >
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                I'm a third-year B.Tech Computer Engineering student at Thakur College of Engineering and Technology, 
-                passionate about full-stack development, AI, and solving real-world problems through technology.
+                I'm a third-year <strong>B.Tech Computer Engineering student at Thakur College of Engineering and Technology (TCET), Mumbai</strong> — passionate about full-stack development, AI/ML, and building software that solves real problems.
               </p>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                My journey in tech is driven by curiosity and the desire to create impactful solutions that make a difference 
-                in education and productivity. I love exploring new technologies and building projects that solve real problems.
+                I've shipped production apps using <strong>React, Django, Node.js, Firebase, and MySQL</strong> — from AI-powered attention detection systems to e-commerce platforms. I recently completed a <strong>Full Stack Developer internship at Navrasa IT Solutions</strong>, where I built and deployed live features for geargains.in.
+              </p>
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                Currently open to <strong>internship opportunities, freelance projects, and full-time roles</strong> starting 2026. If you're building something meaningful, let's talk.
               </p>
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -62,9 +63,10 @@ const About: React.FC = () => {
               >
                 <a
                   href="#contact"
+                  aria-label="Contact Vikas Tiwari"
                   className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  Let's Connect
+                  Let's Work Together
                 </a>
               </motion.div>
             </motion.div>

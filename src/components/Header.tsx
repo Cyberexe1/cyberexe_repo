@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Moon, Sun, Menu, X } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 interface HeaderProps {
   darkMode: boolean;
@@ -10,6 +11,9 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isAllProjects = location.pathname === '/all-projects';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +30,23 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ];
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const sectionId = href.replace('#', '');
+    if (isAllProjects) {
+      // Navigate to home first, then scroll to section
+      navigate('/');
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      const el = document.getElementById(sectionId);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <motion.header
@@ -52,9 +73,10 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
               <motion.a
                 key={item.name}
                 href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-200"
+                className="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-200 cursor-pointer"
               >
                 {item.name}
               </motion.a>
@@ -104,8 +126,8 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
               <a
                 key={item.name}
                 href={item.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-200"
+                onClick={(e) => handleNavClick(e, item.href)}
+                className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-200 cursor-pointer"
               >
                 {item.name}
               </a>

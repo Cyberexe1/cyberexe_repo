@@ -165,7 +165,7 @@ const Contact: React.FC = () => {
   }, []);
 
   return (
-    <section id="contact" className="relative py-20 bg-black overflow-hidden transition-colors duration-300">
+    <section id="contact" aria-label="Contact Vikas Tiwari" className="relative py-20 bg-black overflow-hidden transition-colors duration-300">
       {/* Animated Background Canvas */}
       <canvas
         ref={canvasRef}
@@ -184,8 +184,7 @@ const Contact: React.FC = () => {
             Get In Touch
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            I'm always open to discussing new opportunities, interesting projects, 
-            or just having a chat about technology. Let's connect!
+            Open to internship opportunities, freelance projects, and full-time roles. Whether you have a project in mind or just want to connect — my inbox is always open.
           </p>
         </motion.div>
 

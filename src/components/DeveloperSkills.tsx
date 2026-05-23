@@ -119,7 +119,7 @@ const DeveloperSkills = () => {
   );
 
   return (
-    <div className="relative w-full min-h-screen bg-black overflow-hidden py-16 px-4">
+    <div id="skills" className="relative w-full min-h-screen bg-black overflow-hidden py-16 px-4">
       {/* Animated Background Canvas */}
       <canvas
         ref={canvasRef}
@@ -143,8 +143,11 @@ const DeveloperSkills = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            My Tech Stack
+            Tech Stack & Skills
           </h2>
+          <p className="text-gray-400 text-base mb-4 max-w-xl mx-auto">
+            Technologies I work with daily — from frontend frameworks to databases, cloud platforms, and AI/ML tools.
+          </p>
           <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
         </motion.div>
 

@@ -61,6 +61,7 @@ const Internship: React.FC = () => {
                   href="https://geargains.in"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Navrasa IT Solutions website"
                   className="flex items-center gap-1 text-primary-500 hover:text-primary-400 font-semibold text-lg transition-colors duration-200"
                 >
                   @ Navrasa IT Solutions
@@ -68,21 +69,16 @@ const Internship: React.FC = () => {
                 </a>
                 <span className="flex items-center gap-1 text-base text-gray-500 dark:text-gray-400">
                   <MapPin size={13} />
-                  geargains.in
+                  Mumbai, India
                 </span>
               </div>
 
               {/* Description */}
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-5 font-mono text-base" style={{ maxWidth: 'calc(42rem + 350px)' }}>
-                During my internship at <span className="text-primary-400 font-semibold">Navrasa IT Solutions</span> from
-                November 2025 to January 2026, I contributed to the live project{' '}
-                <span className="text-primary-400 font-semibold">Gear Gains</span> (geargains.in) as a
-                Full Stack Developer Intern. I was responsible for developing and integrating both frontend
-                and backend features, working with technologies like HTML, CSS, JavaScript, and APIs to build
-                dynamic and responsive functionalities. Operating in a fast-paced, deadline-driven environment
-                helped me strengthen my problem-solving, debugging, and optimization skills while ensuring
-                timely delivery of production-ready modules. This experience gave me practical exposure to
-                real-world development workflows, team collaboration, and handling live application challenges effectively.
+                At <span className="text-primary-400 font-semibold">Navrasa IT Solutions</span>, I contributed as a Full Stack Developer Intern on the live e-commerce project{' '}
+                <a href="https://geargains.in" target="_blank" rel="noopener noreferrer" className="text-primary-400 font-semibold hover:underline">Gear Gains</a> (geargains.in).
+                I built and integrated frontend and backend features using <strong>HTML, CSS, JavaScript, and REST APIs</strong>, delivering production-ready modules under real deadlines.
+                This role sharpened my skills in debugging, performance optimization, team collaboration, and handling live application challenges — giving me hands-on experience with real-world development workflows.
               </p>
 
               {/* Tech Tags */}

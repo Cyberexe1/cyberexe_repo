@@ -34,11 +34,11 @@ const Footer: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h3 className="text-2xl font-bold gradient-text mb-2">
+            <p className="text-2xl font-bold gradient-text mb-2">
               Vikas Tiwari
-            </h3>
+            </p>
             <p className="text-gray-400">
-              Building the future, one line of code at a time
+              Full Stack Developer · React · Django · Node.js · Mumbai
             </p>
           </motion.div>
 
@@ -66,10 +66,11 @@ const Footer: React.FC = () => {
           </motion.div>
 
           {/* Navigation Links */}
-          <motion.div
+          <motion.nav
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
+            aria-label="Footer navigation"
             className="flex flex-wrap justify-center gap-8 text-sm"
           >
             {['Home', 'About', 'Projects', 'Contact'].map((item) => (
@@ -81,7 +82,7 @@ const Footer: React.FC = () => {
                 {item}
               </a>
             ))}
-          </motion.div>
+          </motion.nav>
 
           {/* Divider */}
           <motion.div

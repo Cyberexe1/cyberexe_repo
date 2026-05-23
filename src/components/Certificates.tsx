@@ -64,10 +64,10 @@ const Certificates: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-8 gradient-text">
-            Certificates & Achievements
+            Certifications & Achievements
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
-            Continuous learning and skill development through recognized certifications and achievements.
+            Verified credentials from NPTEL, Udemy, and GeeksforGeeks — covering AI/ML, JavaScript, and competitive programming.
           </p>
         </motion.div>
 
