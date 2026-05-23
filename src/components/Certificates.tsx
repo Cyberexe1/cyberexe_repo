@@ -48,7 +48,7 @@ const certificates: Certificate[] = [
 const Certificates: React.FC = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.15,
   });
 
   const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);

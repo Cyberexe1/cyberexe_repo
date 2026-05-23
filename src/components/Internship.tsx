@@ -5,7 +5,7 @@ import { Briefcase, ExternalLink, Calendar, MapPin } from 'lucide-react';
 import ParticleBackgroundSection from './ParticleBackgroundSection';
 
 const Internship: React.FC = () => {
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
 
   const techStack = ['HTML', 'CSS', 'JavaScript', 'REST APIs', 'Full Stack'];
 

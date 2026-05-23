@@ -8,7 +8,7 @@ const Contact: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.15,
   });
 
   const [formData, setFormData] = useState({

@@ -7,7 +7,7 @@ import ParticleBackgroundSection from './ParticleBackgroundSection';
 const About: React.FC = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.15,
   });
 
   const techStack = [
@@ -34,7 +34,7 @@ const About: React.FC = () => {
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.9, ease: 'easeOut' }}
           className="max-w-4xl mx-auto text-center"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-8 gradient-text">
