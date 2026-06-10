@@ -131,6 +131,28 @@ const allProjects: Project[] = [
   },
   {
     id: 7,
+    title: 'ASTRA',
+    description: 'Desktop security analysis tool that automates network capture and runs 7 parallel security modules with AI-powered analysis via Gemini 2.5 Flash.',
+    longDescription:
+      'ASTRA automates what you\'d normally do manually in browser DevTools — but goes far deeper. Give it a URL and it captures every network request the page makes using headless Chromium, runs a full security audit across 7 parallel modules (TLS, CORS, CSP, fingerprinting, API extraction, DNS recon, vulnerability scanning), then delivers an AI-powered analysis using Gemini 2.5 Flash including executive summary, remediation plan, and follow-up chat. Runs entirely on your machine.',
+    techStack: ['Electron', 'TypeScript', 'Playwright', 'Gemini 2.5 Flash', 'Node.js'],
+    githubUrl: 'https://github.com/Cyberexe1/ASTRA',
+    image: '/ASTRA.png',
+    category: 'Security',
+    features: [
+      'Network capture: intercepts every HTTP request (XHR, fetch, scripts, fonts, media) via headless Chromium',
+      'TLS Inspector: certificate validity, expiry, protocol version, cipher suite, HSTS — graded A+ to F',
+      'CORS Analyzer: wildcard origins, credentials + wildcard combos, dangerous methods, auth header exposure',
+      'CSP Analyzer: flags unsafe-inline, unsafe-eval, wildcards, missing frame-ancestors — graded A to F',
+      'Technology Fingerprinter: detects frameworks, CMS, servers, CDNs, analytics, payment & auth providers',
+      'API Endpoint Extractor: identifies XHR/fetch endpoints, decodes JWTs, scans for AWS keys, tokens, passwords in URLs',
+      'DNS Recon: resolves A, AAAA, MX, TXT, NS, CNAME for every domain contacted by the page',
+      'Vulnerability Scanner: actively probes for SQL injection, XSS, path traversal, open redirects',
+      'AI Analysis: executive summary, critical findings, third-party risk, prioritized remediation + follow-up chat',
+    ],
+  },
+  {
+    id: 8,
     title: 'ASET-AI',
     description: 'Stops AI hallucinations by verifying scientific claims against 1.2M+ peer-reviewed papers in real time.',
     longDescription:
@@ -152,7 +174,7 @@ const allProjects: Project[] = [
   },
 ];
 
-const categories = ['All', 'Full Stack', 'Frontend', 'AI/ML'];
+const categories = ['All', 'Full Stack', 'Frontend', 'AI/ML', 'Security'];
 
 const AllProjects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
