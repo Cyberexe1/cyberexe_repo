@@ -82,6 +82,7 @@ const allProjects: Project[] = [
       'A full-featured grocery shopping website with inventory management, shopping cart, and order tracking capabilities.',
     techStack: ['HTML', 'CSS', 'JavaScript'],
     githubUrl: 'https://github.com/Cyberexe1',
+    liveUrl: 'https://grocery-website-red.vercel.app/',
     image: '/Grocery_Website.png',
     category: 'Frontend',
     features: [
@@ -117,7 +118,8 @@ const allProjects: Project[] = [
     longDescription:
       'An online store for plywood and laminate products with detailed product categorization and comparison features.',
     techStack: ['React', 'TypeScript', 'Node.js'],
-    githubUrl: 'https://github.com/Cyberexe1',
+    githubUrl: 'https://github.com/Cyberexe1/Om-Shree-Ganesh-Plywood-and-Laminate',
+    liveUrl: 'https://om-shree-ganesh-plywood-and-laminat.vercel.app/',
     image: '/Plywood_Shop.png',
     category: 'Full Stack',
     features: [
@@ -125,6 +127,27 @@ const allProjects: Project[] = [
       'Price comparison',
       'Product filtering',
       'Customer reviews',
+    ],
+  },
+  {
+    id: 7,
+    title: 'ASET-AI',
+    description: 'Stops AI hallucinations by verifying scientific claims against 1.2M+ peer-reviewed papers in real time.',
+    longDescription:
+      'ASET tackles the 46% AI citation fabrication problem head-on. It verifies any scientific claim — typed, uploaded as a document, or extracted from a YouTube video — against a pre-indexed database of 1.2M+ peer-reviewed papers across 8 domains, returning a trust score and supporting evidence in under 200ms. The database self-grows by fetching from arXiv + PubMed whenever local papers are insufficient.',
+    techStack: ['React', 'Node.js', 'Python', 'SQLite FTS5', 'arXiv API', 'PubMed API', 'AWS SES', 'OCR'],
+    githubUrl: 'https://github.com/Cyberexe1/aset',
+    liveUrl: 'https://www.aset-ai.tech/',
+    image: '/ASET_AI.png',
+    category: 'AI/ML',
+    features: [
+      'Mode 1 — Single Claim: verify any typed claim in under 200ms',
+      'Mode 2 — YouTube: extract transcript and verify every claim automatically',
+      'Mode 3 — Document: upload PDF, DOCX, or image (OCR) for full claim analysis',
+      'Self-growing DB: fetches from arXiv + PubMed and stores results permanently',
+      'Paper search across 1.2M+ papers by title, author, or keyword',
+      '8 scientific domains: Space, Biology, Medicine, Chemistry, Physics, CS, Engineering & more',
+      'Email OTP password reset via AWS SES + Nodemailer',
     ],
   },
 ];

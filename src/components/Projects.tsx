@@ -91,6 +91,25 @@ const Projects: React.FC = () => {
       ],
       liveUrl: 'https://edu-pulse-sage.vercel.app/',
     },
+    {
+      id: 5,
+      title: 'ASET-AI',
+      description: 'Stops AI hallucinations by verifying scientific claims against 1.2M+ peer-reviewed papers in real time.',
+      longDescription: 'ASET tackles the 46% AI citation fabrication problem head-on. It verifies any scientific claim — typed, uploaded as a document, or extracted from a YouTube video — against a pre-indexed database of 1.2M+ peer-reviewed papers across 8 domains, returning a trust score and supporting evidence in under 200ms. The database self-grows by fetching from arXiv + PubMed whenever local papers are insufficient.',
+      techStack: ['React', 'Node.js', 'Python', 'SQLite FTS5', 'arXiv API', 'PubMed API', 'AWS SES', 'OCR'],
+      githubUrl: 'https://github.com/Cyberexe1/aset',
+      image: '/ASET_AI.png',
+      features: [
+        'Mode 1 — Single Claim: verify any typed claim in under 200ms',
+        'Mode 2 — YouTube: extract transcript and verify every claim automatically',
+        'Mode 3 — Document: upload PDF, DOCX, or image (OCR) for full claim analysis',
+        'Self-growing DB: fetches from arXiv + PubMed and stores results permanently',
+        'Paper search across 1.2M+ papers by title, author, or keyword',
+        '8 scientific domains: Space, Biology, Medicine, Chemistry, Physics, CS, Engineering & more',
+        'Email OTP password reset via AWS SES + Nodemailer',
+      ],
+      liveUrl: 'https://www.aset-ai.tech/',
+    },
   ];
 
   return (
