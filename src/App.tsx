@@ -8,6 +8,7 @@ import DeveloperSkills from './components/DeveloperSkills';
 import Projects from './components/Projects';
 import Internship from './components/Internship';
 import AllProjects from './components/AllProjects';
+import Achievements from './components/Achievements';
 import Certificates from './components/Certificates';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -47,6 +48,7 @@ function App() {
               <Projects />
               <Internship />
               <DeveloperSkills />
+              <Achievements />
               <Certificates />
               <Contact />
             </main>
